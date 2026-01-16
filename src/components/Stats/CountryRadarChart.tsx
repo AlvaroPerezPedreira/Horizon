@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { useMarkers } from "@/hooks/useMarkers";
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

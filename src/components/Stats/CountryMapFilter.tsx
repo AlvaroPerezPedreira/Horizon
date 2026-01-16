@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useMarkers } from "@/hooks/useMarkers";
 import countryMappings from "@/utils/CountryMapUtils";
 import { Label } from "@/components/ui/label";
@@ -7,13 +7,11 @@ import { TbUserStar } from "react-icons/tb";
 
 interface CountryMapFilterProps {
   setColor: (color: string) => void;
-  selectedCountries: Set<string>;
   setSelectedCountries: (countries: Set<string>) => void;
 }
 
 export default function CountryMapFilter({
   setColor,
-  selectedCountries,
   setSelectedCountries,
 }: CountryMapFilterProps) {
   const { uniqueCountries, uniqueLCountries, uniqueACountries, visitorFilter, filterByVisitor } = useMarkers();

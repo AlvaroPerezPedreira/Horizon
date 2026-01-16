@@ -1,4 +1,3 @@
-import React from "react";
 import type { ReactElement } from "react";
 import { TileLayer } from "react-leaflet";
 import L from "leaflet";

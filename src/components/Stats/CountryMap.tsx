@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, GeoJSON, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useMarkers } from "@/hooks/useMarkers";
@@ -94,7 +94,6 @@ export default function CountryMap() {
           <div className="w-full sm:w-1/2">
             <CountryMapFilter
               setColor={setColor}
-              selectedCountries={selectedCountries}
               setSelectedCountries={setSelectedCountries}
             />
           </div>

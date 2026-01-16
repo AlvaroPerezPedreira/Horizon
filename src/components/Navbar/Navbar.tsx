@@ -1,4 +1,3 @@
-import React from "react";
 import { IoHomeOutline } from "react-icons/io5";
 import { FaRegMap } from "react-icons/fa";
 import { MdQueryStats } from "react-icons/md";

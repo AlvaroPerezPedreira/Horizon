@@ -1,4 +1,3 @@
-import React from "react";
 import { useMarkers } from "@/hooks/useMarkers";
 import CountUp from "@/components/ui/CountUp";
 import { FaGlobeAmericas } from "react-icons/fa";

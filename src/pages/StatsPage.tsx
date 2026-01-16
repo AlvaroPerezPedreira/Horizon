@@ -3,7 +3,6 @@ import RightSidebar from "@/components/Navbar/RightSidebar";
 import CountryMap from "@/components/Stats/CountryMap";
 import TripsPerYearChart from "@/components/Stats/TripsPerYearChart";
 import CountryRadarChart from "@/components/Stats/CountryRadarChart";
-import React from "react";
 
 export default function StatsPage() {
   return (
