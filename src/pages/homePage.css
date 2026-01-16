@@ -1,0 +1,117 @@
+/* Importación de fuente */
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
+
+.home-container {
+  margin: 0;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: #fff;
+  position: relative;
+}
+
+.home-title {
+  margin: 0;
+  height: 10vmin;
+  width: 100vmin;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.home-title::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: -22vmin;
+  left: 24vmin;
+  width: 52vmin;
+  height: 52vmin;
+  border-radius: 50%;
+  border: 1.1vmin solid currentColor;
+  box-sizing: border-box;
+}
+
+.home-title-letter {
+  font-family: "Josefin Sans", sans-serif;
+  color: currentColor;
+  font-size: 12.5vmin;
+  position: relative;
+  font-style: normal;
+  width: 16.67vmin;
+  text-align: center;
+  z-index: 5;
+  line-height: 1;
+}
+
+.home-title-letter.home-planet {
+  animation: planet-rotate 4s linear infinite;
+  position: relative;
+}
+
+.home-title-letter.home-planet::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  background: black;
+  top: -0.4vmin;
+  left: 3vmin;
+  width: 10.8vmin;
+  height: 10.8vmin;
+}
+
+.home-title-letter.home-planet.left {
+  transform-origin: 33.3vmin 4.2vmin;
+  margin-top: -1vmin;
+}
+
+.home-title-letter.home-planet.right {
+  transform-origin: -16.7vmin 4.2vmin;
+  margin-top: -1vmin;
+}
+
+@keyframes planet-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.home-line {
+  position: absolute;
+  top: 15vmin;
+  height: 70vmin;
+  width: 0.5vmin;
+  background-color: #fff;
+}
+
+.home-button-container {
+  position: absolute;
+  bottom: 2.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  padding: 5px;
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
