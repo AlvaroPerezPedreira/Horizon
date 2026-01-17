@@ -143,7 +143,7 @@ export default function MapItemDrawer({
         title: visitor.name,
         href: "#",
       })),
-    [visitors]
+    [visitors],
   );
 
   return (
@@ -263,10 +263,7 @@ export default function MapItemDrawer({
                             className="flex items-center gap-2 bg-white rounded-full pl-1 pr-4 py-1 border-2 border-blue-400 hover:shadow-md transition-all"
                           >
                             <Avatar className="w-8 h-8 ring-2 ring-white">
-                              <AvatarImage
-                                src={visitor.url}
-                                alt={visitor.name}
-                              />
+                              <AvatarImage alt={visitor.name} />
                               <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-xs font-bold">
                                 {getInitials(visitor.name)}
                               </AvatarFallback>

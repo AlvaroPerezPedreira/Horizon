@@ -8,7 +8,7 @@ interface TimeRemaining {
 }
 
 // Set your next trip date here (YYYY-MM-DD HH:MM format)
-const NEXT_TRIP_DATE = new Date("2026-02-13T00:00:00");
+const NEXT_TRIP_DATE = new Date("2026-02-14T00:00:00");
 
 export default function RightSidebar() {
   const [isVisible, setIsVisible] = useState(true);
@@ -25,7 +25,9 @@ export default function RightSidebar() {
 
       if (diffTime > 0) {
         const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const hours = Math.floor(
+          (diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
         const minutes = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60));
 
         setTimeRemaining({ days, hours, minutes });
@@ -84,7 +86,7 @@ export default function RightSidebar() {
             </span>
             <div className="bg-black rounded-xl w-20 h-20 flex items-center justify-center shadow-md">
               <span className="text-4xl font-bold text-white">
-                {timeRemaining.hours.toString().padStart(2, '0')}
+                {timeRemaining.hours.toString().padStart(2, "0")}
               </span>
             </div>
           </div>
@@ -96,7 +98,7 @@ export default function RightSidebar() {
             </span>
             <div className="bg-black rounded-xl w-20 h-20 flex items-center justify-center shadow-md">
               <span className="text-4xl font-bold text-white">
-                {timeRemaining.minutes.toString().padStart(2, '0')}
+                {timeRemaining.minutes.toString().padStart(2, "0")}
               </span>
             </div>
           </div>
@@ -106,10 +108,10 @@ export default function RightSidebar() {
         <div className="mt-8 text-center">
           <div className="bg-black rounded-lg px-6 py-3">
             <span className="text-sm font-bold text-white">
-              {NEXT_TRIP_DATE.toLocaleDateString('es-ES', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
+              {NEXT_TRIP_DATE.toLocaleDateString("es-ES", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
               })}
             </span>
           </div>
