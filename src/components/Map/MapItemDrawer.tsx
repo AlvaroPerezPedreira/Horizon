@@ -187,7 +187,9 @@ export default function MapItemDrawer({
                     <div className="text-md text-gray-900 bg-gray-50 rounded-lg p-4 border border-gray-200">
                       <TextType
                         text={[
-                          activeMarker.data.visitor,
+                          activeMarker.data.visitor === "Both"
+                            ? "Lara y Álvaro"
+                            : activeMarker.data.visitor,
                           `${activeMarker.location?.state}, ${activeMarker.location?.country}`,
                           `lat: ${activeMarker.location?.lat}, lon: ${activeMarker.location?.lon}`,
                         ]}
@@ -263,7 +265,10 @@ export default function MapItemDrawer({
                             className="flex items-center gap-2 bg-white rounded-full pl-1 pr-4 py-1 border-2 border-blue-400 hover:shadow-md transition-all"
                           >
                             <Avatar className="w-8 h-8 ring-2 ring-white">
-                              <AvatarImage alt={visitor.name} />
+                              <AvatarImage
+                                alt={visitor.name}
+                                src={visitor.url}
+                              />
                               <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-xs font-bold">
                                 {getInitials(visitor.name)}
                               </AvatarFallback>

@@ -109,10 +109,19 @@ export const useMarkersStore = create<MarkersStore>((set, get) => ({
           countriesSet.add(country);
 
           if (marker.data && marker.data.visitor) {
-            if (marker.data.visitor === "Lara") {
-              l_CountriesSet.add(country);
-            } else if (marker.data.visitor === "Álvaro") {
-              a_CountriesSet.add(country);
+            if (marker.data && marker.data.visitor) {
+              if (
+                marker.data.visitor === "Lara" ||
+                marker.data.visitor === "Both"
+              ) {
+                l_CountriesSet.add(country);
+              }
+              if (
+                marker.data.visitor === "Álvaro" ||
+                marker.data.visitor === "Both"
+              ) {
+                a_CountriesSet.add(country);
+              }
             }
           }
 
@@ -180,8 +189,9 @@ export const useMarkersStore = create<MarkersStore>((set, get) => ({
 
         const hasVisitor = (name: string) => {
           if (visitor === name) return true;
+          if (visitor === "Both") return true;
           return visitors.some((v) =>
-            typeof v === "string" ? v === name : false
+            typeof v === "string" ? v === name : false,
           );
         };
 
@@ -228,8 +238,9 @@ export const useMarkersStore = create<MarkersStore>((set, get) => ({
 
         const hasVisitor = (name: string) => {
           if (visitor === name) return true;
+          if (visitor === "Both") return true;
           return visitors.some((v) =>
-            typeof v === "string" ? v === name : false
+            typeof v === "string" ? v === name : false,
           );
         };
 
@@ -325,9 +336,16 @@ export const useMarkersStore = create<MarkersStore>((set, get) => ({
           tripsPerYear.total[year] = (tripsPerYear.total[year] || 0) + 1;
 
           if (marker.data.visitor) {
-            if (marker.data.visitor === "Lara") {
+            if (
+              marker.data.visitor === "Lara" ||
+              marker.data.visitor === "Both"
+            ) {
               tripsPerYear.lara[year] = (tripsPerYear.lara[year] || 0) + 1;
-            } else if (marker.data.visitor === "Álvaro") {
+            }
+            if (
+              marker.data.visitor === "Álvaro" ||
+              marker.data.visitor === "Both"
+            ) {
               tripsPerYear.alvaro[year] = (tripsPerYear.alvaro[year] || 0) + 1;
             }
           }

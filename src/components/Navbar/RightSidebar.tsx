@@ -8,7 +8,7 @@ interface TimeRemaining {
 }
 
 // Set your next trip date here (YYYY-MM-DD HH:MM format)
-const NEXT_TRIP_DATE = new Date("2026-02-14T00:00:00");
+const NEXT_TRIP_DATE = new Date("2026-02-21T00:00:00");
 
 export default function RightSidebar() {
   const [isVisible, setIsVisible] = useState(true);

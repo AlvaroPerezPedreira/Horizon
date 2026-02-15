@@ -14,12 +14,12 @@ interface LoginPageProps {
 
 export default function LoginPage({ onLogin }: LoginPageProps) {
   const [formVisible, setFormVisible] = useState<"form1" | "form2" | null>(
-    null
+    null,
   );
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
 
-  useHotkeys("a", () => setFormVisible("form1"));
+  //useHotkeys("a", () => setFormVisible("form1"));
   useHotkeys(import.meta.env.VITE_HOT_KEY_FORM1, () => setFormVisible("form1"));
   useHotkeys(import.meta.env.VITE_HOT_KEY_FORM2, () => setFormVisible("form2"));
 
@@ -41,7 +41,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
       const userCredential = await signInWithEmailAndPassword(
         auth,
         email,
-        password
+        password,
       );
       onLogin(userCredential.user);
       navigate("/home");
